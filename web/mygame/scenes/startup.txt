@@ -1,0 +1,203 @@
+*title Snakeroot.
+*author Cer
+*scene_list
+	startup
+	save_plugin
+	cw
+	prologue
+	charcreation
+	ch1_1
+	end
+
+*comment  ==============================
+*comment 		mc profile
+*comment  ==============================
+
+*create name "unknown"
+*create lastname " "
+*comment name
+*create gender "unknown"
+*comment male/female/non-binary	
+*create pc_trans false
+*create pc_topscars false
+*create pc_intersex false
+*create pc_dysphoria false
+*comment set true in char creation if applicable
+*create they "they"
+*comment he/she/they
+*create them "them"
+*comment him/her/them
+*create their "their"
+*comment his/her/their
+*create theirs "theirs"
+*comment his/hers/theirs
+*create plur true
+*comment set true if mc uses they/them pronouns
+
+*create haircolour "unknown"
+*create hairtexture "unknown"
+*create hairlength "unknown"
+*create hairdye false
+*create eyecolour "unknown"
+*create eyecolour2 "unknown."
+*create skincolour "unknown"
+*create height "unknown"
+*create clothes "unknown"
+
+*comment  ==============================
+*comment 	mc profile : species specific
+*comment  ==============================
+
+*create species "unclassified"
+*comment chimaera / merfolk / shifter / human
+
+*create subspecies "unknown"
+
+*comment chimaera subspecies ===============
+*comment subspecies: c_water / c_fire / c_air / 
+*comment c_earth / c_demon
+*create c_elemental false
+*comment elemental powers
+*create c_demonblade false
+*comment sets bladed option for chimaeras
+*create c_hair false
+*comment sets elemental-styled hair for chimaeras
+*comment  ==============================
+
+*comment merfolk subspecies ===============
+*comment subspecies: mer_cephalopod / mer_shark / mer_ray / 
+*comment mer_shark / mer_eel / mer_fish
+*create mer_siren false
+*comment set true if siren for hypnosis abilities
+*comment  ==============================
+
+*comment shifter subspecies ===============
+*comment subspecies: sh_canine / sh_feline / sh_ungulate
+*comment  ==============================
+
+*comment  ==============================
+*comment 		mc profile : personality
+*comment  ==============================
+
+*create reserved 0
+*comment more closed off / reserved w emotions
+*create open 0
+*comment more open / honest / emotional
+*create humorous 0
+*comment idk mb like denial central 2k20
+*comment lmao this is like the purple / red / blue hawke situation basically
+*comment hidden aggression / mean variable??
+
+*create aggression 0
+*create impulsive 50
+
+*create touchaverse false
+*create pritrait "unknown"
+
+
+*comment  ==============================
+*comment 		professional
+*comment  ==============================
+
+*create strength 10
+*create dexterity 10
+*create endurance 10
+*create magic 10
+*create weapon "weapon"
+
+*create comtrait "instincts"
+
+*create status "active"
+*comment active / on leave / missing
+*create health "uninjured"
+*comment uninjured / injured / significantly injured
+*create ability "anchor"
+
+*comment  ==============================
+*comment 		companion: mallory
+*comment  ==============================
+
+*create m_gender "male"
+*comment ro has non-variable gender: trans man (he/him/his)
+*create m_rs 0
+*comment general relationship marker
+*create m_met false
+*create m_desc " "
+*comment character description
+*create m_status "you have not met this person yet."
+*comment relationship descriptor
+*create m_interest false
+*create m_intent false
+*comment indicator of romantic interest / intent, defaults to false
+
+*comment  ==============================
+*comment 		companion: raine
+*comment  ==============================
+
+*create r_gender "unknown"
+*create rthey "they"
+*create rthem "them"
+*create rtheir "their"
+*create rtheirs "theirs"
+*create rplur true
+*comment set false if not using they/them pronouns
+*comment code from wikia: $!{pronoun} @{plural don't|doesn't} want to go.
+*create r_rs 0
+*comment general relationship marker
+*create r_met false
+*create r_desc " "
+*comment character description
+*create r_status "you have not met this person yet."
+*comment relationship descriptor, goes on stat bar
+*create r_interest false
+*create r_intent false
+*comment indicator of romantic interest / intent, defaults to false
+*create rmeet_hide false
+
+*comment  ==============================
+*comment 		companion: lux
+*comment  ==============================
+
+*create l_gender "unknown"
+*create lthey "they"
+*create lthem "them"
+*create ltheir "their"
+*create ltheirs "theirs"
+*create lplur true
+*comment set false if not using they/them pronouns
+*create l_rs 0
+*comment general relationship marker
+*create l_met false
+*create l_desc " "
+*comment character description
+*create l_status "you have not met this person yet."
+*comment relationship descriptor
+*create l_interest false
+*create l_intent false
+*comment indicator of romantic interest / intent, defaults to false
+*create lmeet_hide false
+
+*comment  ==============================
+*comment 		plot / misc variables
+*comment  ==============================
+
+*create cw_toggle true
+*comment sets content warning toggles at start of chapters
+*create prof_stat_tog false
+*comment toggles display of professional stats
+*create flirt "[[i]Flirt[/i]]"
+*comment toggles indicators of flirt options on / off
+
+*create s_mal false
+*create s_lux false
+*comment affects order of meeting characters
+
+*create resilience 100
+*create resilience_status ""
+*create resilience_statbar "unaffected"
+*create architect 0
+*create c 0
+*comment :) 
+
+
+*finish

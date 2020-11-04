@@ -1,0 +1,455 @@
+*comment  ==============================
+*comment 		chapter one | part one
+*comment  ==============================
+
+*if (cw_toggle)
+	[b]Content Warning:[/b]
+	
+	This chapter includes: recurring theme of missing memories.
+	
+	*page_break
+	*goto ch1_1
+
+*label ch1_1
+
+*comment  ==============================
+*comment 		meeting raine
+*comment  ==============================
+
+The handle of the door moves before you even touch it.
+
+Funny. You don't recall adding telekinesis to your list of powers.
+
+@{(species = "shifter") Even funnier is the fact that you hadn't heard any sound of movement on the other side, which is odd for you. As a shifter, you're normally pretty perceptive.|}
+
+The knock comes as an afterthought, you think, two quiet raps of knuckles against wood. There's scarcely a pause before the door is opening, slowly, cautiously.
+
+You're already a safe distance away, having already begun backing up the moment it moved, proverbial hackles raised on instinct. Old habits die hard, even more so when this hair-trigger reactivity is what has saved your skin countless times in the past.
+
+Slender fingers curl around the edge of the door. "Sorry for intruding," the stranger starts, and something in the back of your mind rears its head in alarm. A neon warning sign saying, [i]caution, step back.[/i]
+
+( Ask yourself this: who is it for? Are you sure it's you? )
+
+The door swings open fully, and you think you should be doing something — [i]say anything![/i] — but instead you're frozen as the doctor meets your gaze.
+
+Gold eyes. Elegant horns that arc skywards. Sharp features framed by dark hair, a single bone-white streak catching the light at just the right angle.
+
+*fake_choice
+	#You know him, don't you? [i][Sets he/him pronouns for Raine.][/i]
+		*set rthey "he"
+		*set rthem "him"
+		*set rtheir "his"
+		*set rtheirs "his"
+		*set rplur false
+	#You know her, don't you? [i][Sets she/her pronouns for Raine.][/i]
+		*set rthey "she"
+		*set rthem "her"
+		*set rtheir "her"
+		*set rtheirs "hers"
+		*set rplur false
+	#You know them, don't you? [i][Sets they/them pronouns for Raine.][/i]
+		
+*set r_met true
+*set r_desc "the doctor that healed your injuries from the fight with the salamander. $!{rthey} @{rplur seem|seems} genuinely concerned for your well-being."
+*set r_status "neutral"
+
+
+Perhaps knowing is too generous of a word to use. You've only seen ${rthem} once or twice before, but the memory digs into your side like a thorn.
+
+[i]Five years.[/i] Memory tends to cast shapes into blurry relief, but it's not like you have many other memories to take up space in your head.
+
+*page_break [i]It's as clear as day in your mind's eye.[/i]
+
+[i]Remember ——— [/i]
+
+It's the hunger that strikes you, first. The type of hunger that starts in your gut but crawls up your throat; the type of thirst that wracks every nerve of your body until you can think of nothing else.
+
+Do you remember why? Of course you don't.
+
+Not the [i]how[/i] of it, seldom the [i]where[/i] of it, never the [i]why[/i]. They won't tell you either. 
+
+*page_break [i]They can't tell you what they don't know.[/i]
+
+Here is what you [i]do[/i] remember:
+
+The [i]dark[/i]. The gleam of dim-lit screens peeking through the thinnest of slivers. Stripes across concrete. Bars of a cage. Keep the snarling ache contained until they know what you are.
+
+The [i]sun[/i]. 
+
+( Feast, famine. )
+	
+Warmth against your skin. Burning when you see it next. Hurting. Distracting. It makes it difficult to see the faces of your compatriots, strays picked up along the way.
+
+Makes it difficult to see anything but the [i]eyes[/i] ;
+
+*page_break [i]— like molten gold, honeysuckle, harvest moons[/i] ;
+
+‎
+*comment blank space
+
+*page_break [i]— like uncut gemstones, desert dunes and infinite inkwells[/i] ;
+
+‎
+*comment blank space
+
+*page_break [i]— like the dawn on the brink of breaking, the sky dyed violet-pink.[/i]
+
+Three fellow strays: forgotten, unwanted, or cast away.
+
+*page_break [i]Just like you.[/i]
+
+It's a clever tactic, on the Vanguard's part. There's no lack of strays. No shortage of willing soldiers to toss to the monsters.
+
+You've gone your separate paths from then, of course, though not necessarily by your own volition. Occasionally crossing, often diverging.
+
+Still, it's difficult to forget: their eyes, the same as yours. Ill-fitting puzzle pieces, your bodies a mass of contradictions. Scared. Relieved. Furious. 
+
+( Dig a little deeper: had you seen the same hunger in their eyes? The roiling, churning ravenousness of a creature starved, depraved, [i]Rotten?[/i] )
+
+*page_break [i]You had, you had, YOU HAD-[/i]
+
+That had been what set it off, hadn't it? Realising what you could do. Realising you could reach in, and drain infection from that festering wound.
+
+You remember being confused but hopeful. Knowing you did something good.
+
+Not realising the potential. The knife between your teeth, poised above their hearts.
+
+*page_break [i]But you've changed since then, haven't you?[/i]
+
+And presumably, they have too, growing into the masks they've chosen for themselves, dulling down their edges to be less threatening, more palatable within the city walls. Just like you.
+
+No predator survives long flashing sharp teeth — someone's going to want that framed it on their wall, sanitised, polished for display.
+
+You've suppressed the memories thus far. It's not productive in your everyday life. There's no point reminiscing about the people who've come into your life for such brief moments. What're you going to do, call them? Keep in touch?
+
+[i]"Hi, I'm that person you vaguely met in what I can only assume is probably one of the worst times of your life. Care to chat?"[/i]
+
+*page_break [i]Yeah, right.[/i] 
+
+But that's probably the problem. You've kept it hidden behind an imperfectly locked door, held feebly in place by— What [i]would[/i] you call it, even? Are you that starved for connection that some flimsy hope is all it takes, cultivating some arbitrary sense of solidarity between someone you've met only briefly after your rescue, thinking they would understand— What?
+
+[i]What[/i] did you think they would understand?
+
+Why do you think you know them?
+
+You [i]don't.[/i] Ships pass by in the night. Sometimes, they are illuminated by the same beam from the lighthouse. 
+
+Brief encounters. Inconsequential. Nothing that matters. You can't miss strangers, that's absurd.
+
+You never even thought you might meet any of them again.
+
+*page_break [i]Until now, that is.[/i]
+
+You're sinking.
+
+Breathe.
+
+[i]Breathe.[/i]
+
+You've got to come up for air.
+
+*page_break [i]Breathe.[/i]
+
+You squash down the dredges of your panicked emotions. You're fine. This isn't your first rodeo.
+
+The doctor is still standing there, the door resting open behind ${rthem}. Concern lines the slant of ${rtheir} brows, ${rtheir} hand hovering a hair's breadth away from your shoulder.
+
+"Maybe," ${rthey} @{rplur say|says}, voice soft, "you should sit down if you're still feeling dizzy?"
+
+If ${rthey} @{rplur remember|remembers} you, ${rthey} @{rplur do|does} an excellent job of not showing it.
+
+*fake_choice
+	#"I'm fine," you say stiffly, brushing ${rtheir} hand away. You've been in the business long enough, you don't need to be babied.
+		*set reserved %+5
+		
+		$!{rthey} @{rplur are|is} quick to drop ${rtheir} hand, though ${rtheir} eyes remain scrutinising. A surgeon's gaze, you think. Sharp like a scalpel's edge.
+		
+	#	"I'm fine," you say, offering a tight smile. There's a million thoughts racing through your mind right now, half a decade of questions unanswered.
+		*set open %+5
+		
+		You're not always the biggest believer in fate. Why now? Why here? What [i]happened[/i], between then and now? You school your expression back into careful neutrality as best you can, waiting.
+		
+	#Regardless of your current state of mind right now, you'd really prefer not to be touched. The expression you give ${rthem} is stiff, half-way to a grimace, but it gets the message across.
+		*set touchaverse true
+		
+		$!{rtheir} hand drops back to ${rtheir} side smoothly, the motion aborted. 
+		
+	#Hm. Maybe you are a little more shaken on that you thought. Getting nearly mauled and then finding out your doctor is someone you know-but-also-don't will do that to you.
+		*set open %+5
+		
+		You didn't really ask to almost have an existential crisis right about now, but it can't be helped. Wordlessly, you let yourself be guided back to the chair, ${rtheir} touch on your shoulder feather-light before ${rthey} @{rplur take|takes} a step back.
+		
+
+*gosub_scene routines p_statscheck
+"You took quite a hit yesterday," ${rthey} @{rplur say|says}, concern lining the way ${rtheir} lips press together, a grim slash across elegant features. There's a pause, like @{rplur ${rthey}'re|${rthey}'s} deliberating over what to say next.
+
+"What do you remember?"
+
+*temp greyed_out true
+
+*fake_choice
+	*selectable_if (not(greyed_out)) #[i]Too much too much too much—[/i]
+	
+	#"There was a salamander," you start.
+		"There was a salamander," you start, and your voice comes out more hesitant than you'd like. Granted, it isn't without reason — the Rot has a tendency to mess with people's minds. You can trust your gut better than some, but experience has always taught you to hedge your bets.
+		
+		$!{rthey} @{rplur nod|nods}, the motion slow, careful. Like @{rplur ${rthey}'re|${rthey}'s} trying not to spook a wild animal. 
+		
+		"And?" $!{rthey} @{rplur coax|coaxes}, and there's something about the way ${rthey} @{rplur talk|talks} that makes you wonder if ${rthey} @{rplur have|has} to do this often. "Do you remember what town you're in?"
+		
+		"Kilbrook," you say. A pause. "Unless I've been moved?"
+		
+		$!{rthey} @{rplur shake|shakes} ${rtheir} head slightly. "Still in Kilbrook. The hospital was too far though, so I didn't bother moving you all the way there."
+
+*page_break [i]Kilbrook — one of the newer towns.[/i]
+
+[i]New[/i], they'll tell you. [i]Reclaimed.[/i] You've been assigned here for two weeks now, replacing the previous hunter in helping to clear the travel routes of monsters and lend a hand in setting the town up whenever you have the energy to spare. It's an uphill struggle to re-establish a place to live amid the ruins of an old city.
+
+On the bright side, the previous hunter did most of the heavy-lifting, setting up the watchtowers so that any monsters trying for a traipse about town encounters magical barriers.
+
+You certainly appreciate not having to sleep with one eye open. Your hotel — whenever you drag yourself back to it — is tucked safely away into the centre of Kilbrook. A luxury compared to the nights you have to spend on the road sometimes.
+
+So: you're within the city walls. The specifics remain unclear.
+
+*page_break [i]Where exactly are you, anyway?[/i]
+
+The doctor busies ${rthem}self with a notepad from ${rtheir} coat pocket, giving you the opportunity to cast a cursory gaze around the place. Your view is partially obscured by the angle of the door and the corridor beyond it, but you can already tell it certainly isn't a [i]professional[/i] setting — this is, without a doubt, someone's apartment. Presumably the doctor's.
+
+It's a straight shot to the front door from here. That much is easy to tell, because there's a beeline of dried blood and mud across varnished floorboards, right to the room you're in.
+
+"Did I do that?"
+
+The doctor looks over ${rtheir} shoulder. Blinks. "Don't worry about it."
+
+That's a yes, then. Guess that's what ${rthey} meant by the hospital being too far away.
+
+*page_break [i]Oops.[/i]
+
+*if (s_mal)
+
+	"Mal brought you in," ${rthey} @{rplur say|says}, by way of explanation. You startle slightly, only now realising that your gaze had been stuck to the floorboards, trying to pick apart the patterns in the blood. The footprint here, there — you can almost replay the scene in your mind's eye, the struggle of hauling your limp body to a flat surface without doing any additional damage.
+	
+	You lift your gaze. Refocus on the here and now. "Mal?"
+	
+	"My brother." @{rplur $!{rthey}'ve|$!{rthey}'s} set the notepad aside for now, apparently satisfied, and instead pulls out a small bottle of painkillers. "Another hunter."
+	
+	Your mind recalls automatically: ice shards like broken glass, freezing and brittle against your skin.
+	
+	"He heard me." It's not quite a question, but your voice ticks upwards, unbidden.
+	
+	*goto dksjf1
+	
+*if (s_lux)
+
+	"Lux brought you in," ${rthey} @{rplur say|says}, by way of explanation. You startle slightly, only now realising that your gaze had been stuck to the floorboards, trying to pick apart the patterns in the blood. The footprint here, there — you can almost replay the scene in your mind's eye, the struggle of hauling your limp body to a flat surface without doing any additional damage.
+	
+	You lift your gaze. Refocus on the here and now. "Lux?"
+	
+	"A friend." @{rplur $!{rthey}'ve|$!{rthey}'s} set the notepad aside for now, apparently satisfied, and instead pulls out a small bottle of painkillers. "Another agent."
+	
+	Your mind recalls automatically: lightning and the scent of ozone, electric against your skin.
+	
+	"$!{lthey} heard me." It's not quite a question, but your voice ticks upwards, unbidden.
+	
+	*goto dksjf1
+
+*label dksjf1
+
+The doctor gives you an odd look. "I suppose so."
+
+The momentum is there, you realise — the back and forth of not-quite-questions, should you wish to grasp it. Seize the moment.
+
+*temp r_count 0
+
+*label answerthequestionsraine
+
+*choice
+	*hide_reuse #"What's your name?"
+		*set r_count +1
+		*set r_rs +1
+		
+		You know ${rtheir} face, and the vague shape of ${rtheir} magic, but ${rtheir} name still eludes you. You look up, a crease between your brows. "What's your name?"
+		
+		"Uh-"
+		
+		"Funny name, that."
+		
+		The crinkle at the corner of ${rtheir} eyes betrays ${rtheir} amusement, though no smile follows through. "It's Raine." 
+		
+		A name to a face. This is going far better than last time.
+		
+		*goto answerthequestionsraine
+		
+	*hide_reuse #"How bad was the damage?"
+		*set r_count +1
+		*set r_rs +1
+		
+		There's a stain against the wall as well, you note, a smeared handprint of dried blood. Had ${rthey} fallen, slipped on your blood? Had you been struggling, delirious from the pain?
+		
+		You want to know. "How bad was the damage?"
+		
+		$!{rthey} @{rplur don't|doesn't} hesitate. "Bad." Didn't hold back there, you note. "Not bad enough that I couldn't help, but I wouldn't recommend heading back to work just yet."
+		
+		[i]Back to work.[/i] Your job sounds perfectly mundane, when ${rthey} @{rplur put|puts} it like that. Though, you suppose it is, to a doctor in the Vanguard. "How long?"
+		
+		"Maybe a week, or two, if you let it heal naturally." $!{rthey} @{rplur catch|catches} the disbelief in your gaze, and narrows ${rtheir} eyes with a quiet huff. There's no bite to it. "[i]Hunters.[/i] Fine— A couple of days, if you come back."
+		
+		*fake_choice
+			#Somehow, you like the sound of that more than you'd care to admit. ${flirt}
+				*set r_interest true
+				*set reserved %+3
+				*set r_rs +4
+				*set r_status "[i]Oh, what are you doing?[/i]"
+				Something about the invitation catches your mind off-guard, and for the second time that day, it stutters to a halt. [i]It's for healing, you dumbass.[/i] Strictly professional. Still, you're pretty sure it shows on your face too, because Raine's brows tilt upwards ever so slightly, curious.
+				
+				Your fingers tangle in the hem of the shirt as you fight the urge to look away.
+				
+				[i]Damn it.[/i]
+			
+			#"I'll be sure to," you say, sing-song. ${flirt}
+				*set r_interest true
+				*set open %+3
+				*set r_rs +4
+				*set r_status "[i]This might be interesting[/i]"
+				You're sure to add a playful grin, the curve of it borderline indecent, and you're not disappointed by the reaction. You'd have missed it if you blinked, but you aren't: you catch the way ${rtheir} eyes go wide for a split-second before ${rthey} @{rplur avert|averts} ${rtheir} gaze.
+				
+				There's the slightest dust of pink across the high of ${rtheir} cheek.
+				
+				[i]Interesting.[/i]
+			
+			
+			#You nod. A few days is preferable to a few [i]weeks.[/i]
+				*set r_rs +2
+			
+				It's not the first time you've been hurt so badly, but access to magical healing isn't exactly commonplace, even for someone in your line of work. Over the years, you've gotten into a habit of taking medical advice as a loose suggestion instead of a strict rule, but it might be nice to not hunt down monsters while trying not to aggravate not-so-old injuries.
+				
+				"I will," you agree, and Raine's shoulders slump ever so slightly in relief.
+				
+		*gosub_scene routines p_statscheck
+		*goto answerthequestionsraine
+		
+	*hide_reuse #"What are you doing here?"
+		*set r_count +1
+		*set r_rs +1
+		
+		You've been the only field agent from the Vanguard in town for a while now, and you don't recall a medical specialist being part of the original plan. 
+		
+		It's not uncommon for you to be rostered to work with local teams instead of the Vanguard's own. There's always a place worse off than where you are, you're pretty sure, and it always boils down to a question of resource management. A doctor capable of magic is somewhat of a rarity. "What are you doing here?"
+		
+		"We were helping to clear out the old railway tracks," ${rthey} @{rplur explain|explains}, gesturing vaguely. "The one that runs through to Foxwood." 
+		
+		Ah. Admittedly, you've been more focused on the other end of town, simply praying that the barriers would hold up until more showed up, or the work miraculously got easier. You're only one person, after all. "We?"
+		
+		$!{rthey} @{rplur are|is} quick to clarify, ${rtheir} tone wry. "I'm mostly just here to make sure everyone stays in one piece. Mallory and Lux do most of the work."
+		
+		Three of them, then. [i]The same three?[/i] You suppress the frown that starts to form between your brows, offering a hum of understanding instead.
+		
+		*goto answerthequestionsraine
+		
+	*hide_reuse *selectable_if (r_count > 2) #[i]Do you remember me? Do you remember what I did?[/i]
+	
+		The words are burning on the tip of your tongue. You make them wait.
+		
+		Instead, you pick at the hem of your shirt, pinching the fabric between your fingertips as you pepper ${rthem} with questions. Unimportant, in the long run. You probably could have gotten these answers elsewhere if you tried hard enough. A Vanguard doctor with healing magic — there's like what, four, five names on that list? You didn't have to stay here, talking to ${rthem}.
+		
+		You're stalling, aren't you?
+		
+		Searching for traces of familiarity in a stranger. Hoping that whatever happened five years ago wasn't a horrific fever dream.
+		
+		Praying that it was. 
+		
+		But what would that mean for you? Like a body, you carry your history in parts: you can remember your beginnings, and you can remember your last five years. What of the middle? What of the events that transpired between adolescence and whoever they found outside the walls five years ago, lost and alone?
+		
+		If that was a dream, then how would you explain [i]you[/i]?
+		
+		You dig your nails into your palms so hard that they sting.
+		
+		*fake_choice
+			#"We've met before, haven't we?"
+				*set r_rs %+2
+				*set open %+5
+				*set impulsive %+3
+				*gosub_scene routines p_statscheck
+			
+				"We've met before, haven't we?" You pose it like a question. It isn't, not really. 
+				
+				You thought voicing it might take a weight off your chest, but now that it's hanging in mid-air, you're not quite sure what to make of it. [i]Breathe.[/i]
+				
+				Confusion lines ${rtheir} features. "I'm sorry?"
+				
+				You press on. "Five years ago. The Vanguard took in four people, who were—" You don't miss the way ${rtheir} expression tightens, a muscle in ${rtheir} jaw clenching. "I was one of them. And so were you, right?"
+				
+				A silence stretches between you. The researchers had warned you that memory gets messy with things like those. Fractures. Hides, like a spooked gazelle that catches the scent of a lion. You're bracing for incredulity, for disbelief, for denial.
+				
+				But when ${rthey} @{rplur speak|speaks} again, ${rtheir} voice is soft. "Yes, I think— yes."
+
+				You exhale slowly. Carefully. Like your lungs have turned to brittle glass, and you think something is on the verge of breaking. So much so that you almost miss ${rtheir} next words.
+				
+				"Thank you." The words are barely audible. A secret between breaths.
+				
+				[i]Huh.[/i] Somehow, you didn't expect that. But it's... more than anything you might have imagined, much less anything you expected when you woke up today, so you'll take it.
+				
+			#You swallow your words. Surely, if ${rthey} @{rplur know|knows}, ${rthey} would say something.
+			
+				You swallow your words. Surely, if ${rthey} @{rplur know|knows}, ${rthey} would say something. So you say nothing, ignoring the way the question has buried itself under your skin like an old rusted fish hook, resisting every valiant attempt to pull it out.
+				
+				Frankly, it's been there for so long that you forget its weight, most days. Not today, though.
+				
+				And certainly not now, when Raine is the first to break the silence. "Sorry, this is a little out of the blue, but—" If @{rplur ${rthey}'re|${rthey}'s} going where you think @{rplur ${rthey}'re|${rthey}'s} going, it's not as if it's been weighing on you for this entire conversation. "—have we met before?"
+				
+				The researchers had warned you that memory gets messy with things like those. Fractures. Hides, like a spooked gazelle that catches the scent of a lion. You didn't expect ${rthem} to bring it up.
+				
+				*fake_choice
+					#You nod slowly. Hesitantly.
+						*set r_rs %+2
+						*set open %+3
+						*set impulsive %-3
+						*gosub_scene routines p_statscheck
+						
+						You can't quite tell if you're relieved that ${rthey} asked first. Something uneasy wells up inside you, as if you'd been caught out on a bald-faced lie. 
+						
+						Instead of burying it, you nod slowly. Hesitantly.
+						
+						Raine mirrors the movement. You look for anger, disappointment, [i]fear[/i], and you find nothing but... gratitude? Faint, but present. No, that can't be right.
+						
+						"I thought I was seeing things," ${rthey} @{rplur say|says} softly. "Thank you."
+						
+						[i]Huh.[/i] Somehow, you didn't expect that. But it's... more than anything you might have imagined, much less anything you expected when you woke up today, so you'll take it.
+					
+					#Deny it.
+						*set rmeet_hide true
+						*set reserved %+5
+						*set impulsive %-5
+						*set r_status "Don't let ${rthem} know"
+						*gosub_scene routines p_statscheck
+						
+						You can't— you [i]can't[/i]. It's too much right now. You need to keep these skeletons in the closet, these bodies six feet under. You bite your tongue. It feels like there's a ghost behind your ribs, your bones a cage to keep it contained.
+						
+						"Are you sure?" You say instead. It's a surprise how steady your voice is.
+						
+						Not now. Maybe later. But not now.
+						
+						$!{rthey} @{rplur take|takes} it smoothly enough. "I must've gotten you mixed up with someone else, then."
+		*goto answerthequestionsraine
+		
+	#That's it for now, you're done asking questions.
+		*comment exit loop.
+		
+		*if (r_count = 0)
+			You're not one for questions, or you just don't feel like talking right now.
+			*goto iguesstheyansweredthem
+			
+		*else
+			*goto iguesstheyansweredthem
+		
+*label iguesstheyansweredthem
+
+Raine clears ${rtheir} throat and hands you the bottle, along with a roll of fresh bandages. "Just in case," ${rthey} @{rplur say|says}, "though you shouldn't have to do anything if you take it easy for today."
+
+Something about the way ${rthey} @{rplur say|said} that makes you think that ${rthey} @{rplur don't|doesn't} have the highest expectations.
+
+@{rplur $!{rthey}'re|$!{rthey}'s} kind enough to help you gather your belongings into a bag, broken weapon included, and you try not to look at the blood on your way out.
+
+*page_break [i]The fresh air will do you some good.[/i]
+
+*finish

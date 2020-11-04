@@ -1,0 +1,68 @@
+*image banner.png center
+
+[i]Snakeroot[/i] is an interactive fantasy fiction with horror elements.  
+
+Feel free to reach me on Snakeroot's
+*link https://cerberus-writes.tumblr.com/ Tumblr
+if you have any questions!
+
+[b]Content Warning:[/b]
+
+This content may not be suitable for everyone, and will include violent imagery, body horror, and gore. There will be situations where characters are injured, or monsters are described in detail. There may also be some potentially unhealthy ideation, the exploration of which may be cathartic to some or triggering to others. Please feel free to take a step back if you ever feel uncomfortable, your health always comes first!
+
+If there's anything in particular you'd like tagged, please let me know.
+
+*label cw_choice
+
+Would you like to be able to read content warnings at the start of each chapter? This setting can be changed in the Stats page.
+
+*fake_choice
+	#Yes. Enable content warnings at the start of each chapter.
+		*set cw_toggle true
+	#No. Disable content warnings at the start of each chapter.
+		*set cw_toggle false
+	#I'd like to see a list of the potential content warnings first.
+		This list will be updated with every update. If there are certain things you would like added in particular or that I've missed, please let me know!
+		
+		If you choose to enable content warnings, they will display at the start of every chapter as well. The list may content mildly spoilery content.
+		
+		- body horror
+		- descriptions of monsters
+		- gore
+		- imagery of rot
+		- missing memories
+		- violent imagery
+		*page_break Back to menu.
+		*goto cw_choice
+
+Ability statistics (strength, dexterity, constitution, magic) can be enabled with a toggle. By default, the stat chart is hidden. Would you like to see these on the statistics page?
+
+*fake_choice
+	#Yes. Enable ability statistics.
+		*set prof_stat_tog true
+	#No. Keep ability statistics hidden.
+		*set prof_stat_tog false
+		
+
+Flirt options can be indicated next to option text, e.g. [[i]Flirt[/i]] By default, flirt indicators are visible.
+
+*fake_choice
+	#Keep flirt indicators on, I'd like to know if my character is initiating a romantic interaction.
+	#Disable flirt indicators. I don't want to ruin the immersion.
+		*set flirt ""
+
+*comment  ==============================
+*comment 		playtesting menu
+*comment  ==============================
+
+This is a screen for playtesting purposes.
+
+*fake_choice
+	#Jump to chapter 1 with a present MC ([i]Julian Graves[/i]).
+		*goto_scene preset_mc
+	#Proceed with prologue.
+		*finish
+	#Jump to character creation.
+		*goto_scene charcreation
+	
+*finish

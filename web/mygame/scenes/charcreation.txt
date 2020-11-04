@@ -1,0 +1,889 @@
+*comment  ==============================
+*comment 		character creation / chapter 1
+*comment  ==============================
+
+*if (cw_toggle)
+	[b]Content Warning:[/b]
+	
+	N/A for this segment.
+	
+	*page_break
+	*goto charcreation
+
+*label charcreation
+
+*set health "injured..? Healing"
+*set resilience 95
+*set resilience_status "Recovering."
+*set resilience_statbar "Unaffected"
+
+You are floating. Drifting.
+
+The world is quieter, now. You aren't in the cave any more.
+
+That doesn't necessarily mean that you are [i]safe[/i].
+
+But think about it: do you want to leave? It is painless, this in-between that you are suspended in. [i]Ah—[/i] wait, you cannot feel your body. You cannot feel your legs, your arms, your magic. As it turns out, you find little relief in the absence of it all.
+
+Perhaps the pain has its uses after all.
+
+*page_break [i]Wake up.[/i]
+
+You wake— 
+
+Temporarily weightless, before you recall the burden of a body, of blood through your veins.
+
+Take a moment to collect yourself. Breathe.
+
+*page_break [i]Open your eyes.[/i]
+
+You open your eyes slowly. Sunlight streams in through the half-drawn blinds of an unfamiliar window, painting lazily swirling dust motes gold. Had you been in a more whimsical mood, you might even think it pretty.
+
+Not right now, though. The light, dim as it is, is making you nauseous.
+
+Your body is slow to remember the weight of its limbs, and sitting up in bed is an ordeal on its own. Still, you manage. Somehow. It doesn't hurt as much as you thought it might — the pain is dulled, sharp edges blunted to a more manageable level. 
+
+You can still feel the pull across your ribs every time you breathe, though, and it's enough to make you wince as you swing your legs over the side of the bed and take stock of your surroundings.
+
+*page_break [i]Where are you?[/i]
+
+It is a small room, outfitted with only the bare necessities. A table with a single chair stands at the end of the room, the dim sunlight illuminating the barest edge of the objects set atop it.
+
+There's a manilla folder right on the corner of the table, on the precipice of falling off. You can make out the silhouette of the Vanguard's emblem, which bodes well for your current situation. Chances are you [i]haven't[/i] been kidnapped by some nefarious mad scientist who wants to run experiments on your magic — you're instead probably in the hands of a Vanguard-licensed researcher who wants to run experiments on your magic [i]anyway[/i].
+
+Fun. You'll burn that bridge when you get to it. First, you need to figure out what happened to you. 
+
+*comment  ==============================================
+*comment	set temp variables to store pre-selection stats
+*temp str_reset strength
+*temp dex_reset dexterity
+*temp end_reset endurance
+*temp mag_reset magic
+*temp reset_species false
+*comment  ==============================================
+
+
+*label species_reset
+
+*if (reset_species)
+	*set strength str_reset
+	*set dexterity dex_reset
+	*set endurance end_reset
+	*set magic mag_reset
+	You rub your eyes and refocus, frowning slightly.
+	*goto species_selection
+
+*label species_selection
+
+You catch a glimpse of yourself in a mirror across the room and see…
+
+*choice
+	#...a chimaera who looks like they haven't slept in a decade, blinking blearily back at you.
+		*set species "chimaera"
+		*set strength  %+5
+		*set dexterity  %+5
+		Chimaeras — your kind are best known for their distinctive horns, and the fact that they can crop up almost unexpectedly in families, a dormant gene rearing its head after generations of silence. For most people, the understanding stops there. 
+
+		You know better. The most populous kind are those descended from elementals, magic made flesh, often bleeding through in markings on the skin, flashing through a shine in their eyes. Then there are those of the demonic variant, typically growing a more ornate set of horns, often reminiscent of the specific type of demon they are descended from. Most don't go digging, though.
+
+		You don't name demons unless you want to call them to you.
+
+		*choice
+			#You are descended from water elementals, which is easy enough to tell, with the webbed tail-fin and the swirling, wave-like markings that curl around your limbs.
+				*set subspecies "c_water"
+				*set c_elemental true
+				It does also mean that you are capable of some minor water manipulation, though its success becomes a little questionable without an actual source nearby. Not that it's impossible, but it's always draining to try to create something from nothing, or pull an element from somewhere it doesn't want to leave.
+				*goto after_species
+			#You are descended from fire elementals, and your heritage shines through the harmless fissures in your horns, faintly glowing like magma through cracked earth.
+				*set subspecies "c_fire"
+				*set c_elemental true
+				It does also mean that you are capable of some minor fire manipulation, though fire is a temperamental partner, and its effectiveness can a little questionable at times. It is an element eager to consume, and it's a challenge to rein it in sometimes.
+				*goto after_species
+			#You are descended from air elementals, your horns elegant and hollow, curved smoothly upwards like windchimes and marked with wispy, faded markings.
+				*set subspecies "c_air"
+				*set c_elemental true
+				It does also mean that you are capable of some minor air manipulation, which is a simultaneously underwhelming and terrifying thing to say. With effort, it's possible for you to thin the air in small, localised patches, or augment your movement with a helpful breeze. Alas, air is an evasive element, and it tends to do as it wishes.
+				*goto after_species
+			#You are descended from earth elementals, your horns taking on a distinctive crystalline appearance, catching the light in dizzying kaleidoscopes of colour.
+				*set subspecies "c_earth"
+				*set c_elemental true
+				It does also mean that you are capable of some minor earth manipulation, which often sounds more than it actually is. You can create small, localised tremors, or effectively sense the lay of the land around you — helpful, when you're tracking monsters who burrow themselves away in subterranean caves.
+				*goto after_species
+			#You are descended from demons, your horns sharp-edged and your tail ending in a wicked looking blade.
+				*set subspecies "c_demon"
+				It does also mean that you are halfway to the label of shapeshifter, and devoid of the elemental capabilities of your non-demonic counterparts. Instead, your ancestry has equipped you with natural weaponry — fangs and claws that elongate in the heat of battle, and a wickedly sharp tail that serves as an excellent back-up weapon in emergencies.
+				
+				*fake_choice
+					#As is common practice for most demonic chimaeras, you've taken to dulling down the end of your tail blade, just so you don't accidentally hurt anyone while distracted. Your fangs and claws remain, of course.
+						*set c_demonblade false
+					#You prefer to keep your tail blade as is, sharp and ready for battle. It does mean that you end up having to wear a sheath over it to protect yourself and others when not out on the field, though.
+						*set c_demonblade true
+				*goto after_species
+			#You must be more tired than you thought. You're not even a chimaera.
+				*goto species_reset
+			
+	#...an exhausted merperson, the blanket pooled around them like an oversized shawl. 
+		*set species "merfolk"
+		*set endurance %+10
+		You wouldn't call yourself an oddity on dry land, but merfolk aren't exactly commonplace either. Most merfolk prefer to remain within their aquatic realms, or on the fringes of communities that border large bodies of water. No sensible merperson would willingly put themselves through the pain of transforming back and forth every day, because frankly put, it is [i]agony[/i].
+		
+		You would know, after all. It isn't a particularly graceful process, nor a pretty one at that. This is a metamorphosis marked by blood, limbs rearranged to meet the demands of a hostile atmosphere. 
+		
+		Merfolk are a hardy species. You are no exception, intimately acquainted with having to claw your survival out from the jaws of a world that makes a point of trying to take you out of it.
+		
+		
+		Merfolk often mirror the appearance of other creatures in their aquatic ecosystem, their lower halves resembling anything from seahorses to sharks. Your ears are webbed even in your two-legged form, and the light shimmer of fish scales traces your cheekbones. 		
+		*label merfolk_choice
+		*choice
+			#Your aquatic form generally resembles that of a cephalopod. Others of your kind have tentacled lower halves similar to the bodies of squids and octopi.
+				*set subspecies "mer_cephalopod"
+				*set dexterity %+5
+				Your	 lower half morphs into tentacles when you're in the water, and you're a great deal more flexible than other some other merfolk, but you didn't quite inherit any drastic colour-changing characteristics nor the ability to disappear in an explosion of ink.
+				
+				People need to remember that your people are apex predators of the ocean, and not just because your lower halves allow you to move faster underwater. Your pointed canines tend to serve as a good reminder.
+				*if not (mer_siren)
+					*set endurance %+2
+					*goto after_species
+				*else
+					*goto after_species
+			#Your aquatic form generally resembles that of a ray. Others of your kind have large tail-fins similar to that of stingrays and manta rays.
+				*set subspecies "mer_ray"
+				*set dexterity %+5
+				Your	 lower half morphs into the triangular fins of a ray when you're in the water, which make you quite the magnificent sight to behold. Unfortunately, you didn't quite inherit any semblance of a barb that some stingrays possess, nor the electroreception they use for hunting prey, but your track record proves that you hardly need the latter.
+				
+				People need to remember that your people are apex predators of the ocean, and not just because your lower halves allow you to move faster underwater. Your pointed canines tend to serve as a good reminder.
+				*if not (mer_siren)
+					*set endurance %+2
+					*goto after_species
+				*else
+					*goto after_species
+			#Your aquatic form generally resembles that of a shark. Others of your kind have powerful tails reminiscent of anything from dogfish to great whites.
+				*set subspecies "mer_shark"
+				*set strength %+5
+				Your	 lower half morphs into the sleek body of a shark when you're in the water, which can make for a terrifying sight to the unwary. Unfortunately, you didn't quite inherit the full set of teeth of a shark, nor the electroreception of some shark species, but you don't need either to be able to do your job effectively. 
+				
+				People need to remember that your people are apex predators of the ocean, and not just because your lower halves allow you to move faster underwater. Your pointed canines tend to serve as a good reminder.
+				*if not (mer_siren)
+					*set endurance %+2
+					*goto after_species
+				*else
+					*goto after_species
+			#Your aquatic form generally resembles that of an eel. Others of your kind have sleek tails similar to morays or even electric eels.
+				*set subspecies "mer_eel"
+				*set dexterity %+5
+				Your	 lower half morphs into the whip-like body of an eel when you're in the water, which you can curl and tuck into narrow spaces should you ever need to hide. Unfortunately, you didn't quite inherit the shock ability of the electric eel, nor the toxicity of eel blood, but you get by just fine.
+				
+				People need to remember that your people are apex predators of the ocean, and not just because your lower halves allow you to move faster underwater. Your pointed canines tend to serve as a good reminder.
+				*if not (mer_siren)
+					*set endurance %+2
+					*goto after_species
+				*else
+					*goto after_species
+			#Your aquatic form generally resembles that of a fish, which is a very general statement to make. Others of your kind have tails reminiscent of anything from iridescent betta fish to colourful koi.
+				*set subspecies "mer_fish"
+				*set strength %+5
+				The most diverse group of merfolk variations, your aquatic form is probably what most people would picture when thinking of the typical merperson.  Your lower half is smooth-scaled and shiny, strong enough to  deliver a hit that could stun any average person, though not exactly conducive to movement on dry land.
+				
+				People need to remember that your people are apex predators of the ocean, and not just because your lower halves allow you to move faster underwater. Your pointed canines tend to serve as a good reminder.
+				*if not (mer_siren)
+					*set endurance %+2
+					*goto after_species
+				*else
+					*goto after_species
+			*disable_reuse #You are also a siren, a merperson with the ability to hypnotise with their voice. Although really, [i]hypnotise[/i] isn't exactly the right word for what you can do.
+				*set subspecies "mer_siren"
+				*set mer_siren true
+				It's an ability evolved for hunting, stunning and redirecting schools of fish into the nets of hunters. People seem to think that you can simply make others do as you please with nothing more than a clever word, but it doesn't quite work like that.
+				
+				You've heard of particularly powerful sirens that have cultivated their ability to achieve something similar to that, but you've never really had the chance. Besides, most of the monsters you fight aren't exactly the type that you can have a conversation with.
+				
+				*goto merfolk_choice
+			#You must be more tired than you thought. You're not even a merperson.
+				*goto species_reset
+			
+	#...a bedraggled shifter, the lines of their face drawn tight with pain.
+		*set species "shifter"
+		*set strength  %+5
+		*set dexterity  %+5
+		Your kind often get mistaken for werewolves, which is incorrect on two counts. Firstly, shifters have a greater variety than just being able to shift into wolves. Secondly, you are fully in control of your abilities, and thankfully aren't reliant on the lunar cycle to be able to use them. You certainly don't envy lycanthropes, not with their reputation of turning into moon-blind, frenzied creatures.
+		
+		In your human form, you're virtually indistinguishable from other humans. But when shapeshifted, it's easy to spot a shifter, if you know what you're looking for. Apart from the consistent eye colour, there's always a little something [i]off[/i] about shifters in their animal form — their limbs just a touch too long, or the way they move just a little too smooth.
+		
+		There are limits to what you can shift into. Your body mass doesn't just disappear, after all. You're pretty sure there's been no record of an elephant shifter, in the same way you know it's fairly impossible for the average person to shift into anything smaller than a labrador.
+		*choice
+			#You are a canine shifter. Others like you have animal forms ranging anywhere from wiry foxes to hulking wolves.
+				*set strength  %+10
+				*set subspecies "sh_canine"
+				Being a canine shifter does give you a natural advantage in matters of strength, which your job puts to good use. 
+				
+				Like all shifters, your heightened senses are both a bane and a boon in your animal and human forms. It does make tracking your target through the wilds somewhat easier, but the flip side of it means that you're not the biggest fan of crowded places, especially enclosed ones.
+				*goto after_species
+			#You are a feline shifter. Others like you have animal forms ranging anywhere from fine-boned leopards to powerful lions.
+				*set dexterity  %+10
+				*set subspecies "sh_feline"
+				Being a feline shifter does give you a natural advantage in matters of dexterity, which your job puts to good use. 
+				
+				Like all shifters, your heightened senses are both a bane and a boon in your animal and human forms. It does make tracking your target through the wilds somewhat easier, but the flip side of it means that you're not the biggest fan of crowded places, especially enclosed ones.
+				*goto after_species
+			
+			#You are an ungulate shifter. Others like you have animal forms ranging anywhere from delicate-looking deer to oddly lanky horses.
+				*set dexterity  %+10
+				*set subspecies "sh_ungulate"
+				Being an ungulate shifter does give you a natural advantage in matters of speed, which your job puts to good use. 
+				
+				Like all shifters, your heightened senses are both a bane and a boon in your animal and human forms. It does make tracking your target through the wilds somewhat easier, but the flip side of it means that you're not the biggest fan of crowded places, especially enclosed ones.
+				*goto after_species
+			#You are a mustelid shifter. Others like you have animal forms ranging anywhere from weasels to wolverines, albeit far larger than average.
+				*set strength  %+10
+				*set subspecies "sh_mustelid"
+				Being a mustelid shifter does give you a natural advantage in matters of strength, which your job puts to good use. 
+				
+				Like all shifters, your heightened senses are both a bane and a boon in your animal and human forms. It does make tracking your target through the wilds somewhat easier, but the flip side of it means that you're not the biggest fan of crowded places, especially enclosed ones.
+				*goto after_species
+			#You must be more tired than you thought. You're not even a shifter.
+				*goto species_reset
+			
+	#...a human that honestly looks more corpse than person, their face ashen and haggard.
+		*set species "human"
+		You are human. That's the long and short of it. No special abilities are conferred upon you by virtue of your blood: no pointed teeth, no natural weaponry, no secret alternative form. 
+		
+		It's not particularly difficult to live in a world where you're one of the most populous species. The struggles you face aren't unique to you by virtue of what you are, so to speak.
+		
+		Monster-hunting is just a particularly difficult occupation to keep, no matter what you are. 
+		
+		*choice
+			#You've dedicated a generous amount of your time to building your strength, determined to hold your own against the largest of monsters.
+				*set strength  %+15
+				*goto after_species
+			#You've spent countless hours refining your movement, learning to move like wind and water. They can't hurt you if they can't catch you.
+				*set dexterity  %+15
+				*goto after_species
+			#You've built up your resilience through equal parts training and experience. As long as you stay standing, you can get another hit in.
+				*set endurance %+15
+				*goto after_species
+			#You must be more tired than you thought. You're not even a human.
+				*goto species_reset
+			
+*comment  =======================
+*comment after species selection (1)
+*label after_species
+*gosub_scene routines pr_statscheck
+*comment  =======================
+
+*if (species = "chimaera")
+	Absently, you run a hand over one of your horns, surprised to not find any new notches or missing chunks. You did take quite the hit to the head, after all.
+	*goto after_species2
+
+*if (species="merfolk")
+	You wonder if the fight would have gone any differently had it been in the water. 	Home-turf advantage, and all that. Absently, your fingers tap against your thigh, and you wince as you brush against a still-tender bruise. Not surprising, considering the way the fight went.
+	*goto after_species2
+	
+*else
+	Absently, you run your hand along the back of your head, wincing as you brush against a still-tender bruise. Not surprising, considering you did take quite the hit to the head yesterday.
+	*goto after_species2
+
+*label after_species2
+
+In fact, you look like you've been run over more than once, then decided to roll down a hill for good measure. 
+
+*page_break [i]Honestly, you feel like it too.[/i]
+
+Given the day you had, or the week prior to it, you had expected this. Not the bit about the salamander, but the bone-deep exhaustion that remains in you, despite having only just woken up. They've had you running back and forth between cities, clearing roads of potential threats and scouting out monster territories to deal with later. You know, when you would have come back with a team.
+
+Not alone, wholly on your own, under-equipped and caught off-guard. Saved only by the good grace of whatever hunter was also out your way.
+
+Ridiculous. An amateur mistake. You should know better by now. You probably did, in all honesty, but exhaustion has a tendency to wear people down into doing stupid things.
+
+*page_break [i]You won't forget this anytime soon.[/i]
+
+You drag a hand over your face, rubbing sleep from your eyes, barely stifling a yawn. The motion is enough to make you note how your clothes hang oddly on you. 
+
+It takes you a moment to realise why: it's because they're not yours. White bandages peek out from beneath the sleeves, which…
+
+*fake_choice
+	#...are a little short, but you've worn worse. It's what you get for being so tall. [i][6'2" and over][/i]
+		*set height "very tall"
+	#...don't fit too horribly, actually. Whoever owns this shirt is probably taller than average, just like you. [i][6'0" and under][/i]
+		*set height "tall"
+	#...are a little long, even though you're about average height. [i][5'8" and under][/i]
+		*set height "average"
+	#...hang down to about your elbow. It can't be helped, you suppose, when borrowing someone's clothes when you're below average height. [i][5'4" and under][/i]
+		*set height "short"
+	#...hang down past your elbow. You've never felt smaller. [i][5'1" and under][/i]
+		*set height "very short"
+		
+You must've been out for the count when all this happened. There's only the vaguest of recollections swimming in the edge of your memory. A voice, you think. Asking where it hurt the most. [i]On a scale of one to ten—[/i] You nearly got mauled by a salamander, which is, relative to some other near misses you've had, places this somewhere solidly in the eight range. 
+
+Of course, that's not how the scale works. No matter. You don't remember being coherent enough to form a proper answer anyway.
+
+Another cursory glance around the room reveals your clothes draped over the back of the chair, bloodstained and torn. A pity — you remember quite liking that shirt.
+
+Sure, you have others, but that one had definitely been one of the favourites.
+
+You'd generally describe your style as…
+
+*fake_choice
+	#....casual. Your job is tough enough as it is, and you'd rather dress comfortably when you're trying to dodge monster attacks.
+		*set clothes "casual"
+	#...professional. If it ain't broke, why fix it? Your wallet thanks you, too, because it means that the Vanguard funds most of the outfits you wear.
+		*set clothes "professional"
+	#...colourful. You favour colours and bold patterns where you can, and you like to think that it helps deter monsters. Signalling theory, and all that.
+		*set clothes "colourful"
+	#...vintage. You have a soft spot for some of the older styles, though it does mean that sometimes you have to delve into more niche stores when shopping.
+		*set clothes "vintage"
+	#...artsy. Some might even call it ostentatious. Your unique taste might put a bit of a dent in your wallet, but it's worth it.
+		*set clothes "artsy"
+	#...modern. Virtually undistinguishable from any other fashion-forward civilian. You like to keep up with the latest trends to the best of your ability.
+		*set clothes "modern"
+		
+Cautiously, you test out your legs, your movements slow, careful should your knees decide to give way. It is a practised sort of wariness that comes from experience — you've stood up one too many times only to have your body decide to work against you, and falling flat on your face isn't exactly the best way to start the day.
+
+To your relief, they work. Good. You're standing. You feel like shit, sure, but you're up.
+
+You rock your weight back onto your heels experimentally. Take note of the series of aches that bring themselves to your awareness, dull orange warning lights inside a worn-out car. Whoever patched you up did a decent job of it, all things considered. You can only imagine whatever condition you must have been in when you got dragged in.
+
+Almost on reflex, you reach out with your magic once more. Not enough to exert any real effect on others, but just to get a sense of anyone in the vicinity. There is a presence on the periphery of your range. 
+
+( [i]A candle flame, dancing violet in its core, its edges feathering to red and gold. Flickering, distracted.[/i] )
+
+That must be your mystery medic. Their magic is easier to read in this resting state, but likely also because it's [i]strong[/i]. It's normally much more difficult to get a beat on people so far away.
+
+*if (s_mal)
+	
+	You find no trace of the individual who must have dragged you in, though. The room itself is on the colder side despite the sun, but nothing compared to the frigid ice crystals from before. Impossibly sharp. Brittle to the touch.
+	*goto weapon_select
+
+*if (s_lux)
+
+	You find no trace of the individual who must have dragged you in, though. Your skin tingles with the use of your magic, but it is little compared to the crackle of lightning that had danced across it earlier. Electric. Terrifying.
+	*goto weapon_select
+
+*label weapon_select
+
+*page_break [i]You come back to yourself with a slow exhale.[/i]
+
+You're fine. You're back within the city. Four walls. Enchanted barriers.
+
+No monsters. You can breathe.
+
+Your magic settles back into your stomach, curled around your gut like a lazy snake. No one seems to be approaching your room just yet, which is good. The nausea still hasn't left, and you don't quite trust yourself to be speaking yet.
+
+Instead, you make your way over to the table, your pace shakier than you would like. It takes your eyes a moment longer to adjust to the darkened corner — the sunlight was too bright, but this corner is too dark? Really, eyes? — but when they do, you recognise…
+
+*fake_choice
+	#...the fractured blades of your set of daggers.
+		*set weapon "set of daggers"
+	#...the broken hilt of your sword.
+		*set weapon "sword"
+	#...the splintered handle of your polearm.
+		*set weapon "polearm"
+	#...the mangled frame of your firearm.
+		*set weapon "firearm"
+		
+The Vanguard provides all field agents with enchanted weapons to counter the exceptional resilience of Rot-afflicted monsters, and it looks like you'll have to put in a request for a new one. The charms engraved into the metal have since lost their shine, little white lines tracing micro-fractures in the craftsmanship.
+
+*if (weapon = "set of daggers")
+
+	Your fingers brush lightly over the broken blades, the metal cool to the touch. You have your magic, sure, but it's not the type of magic to be able to hold its own when you're up close and personal with some feral creature. Plus, you've always liked the mobility it affords you on the battlefield.
+	*goto name_select
+
+*if (weapon = "sword")
+
+	You're tempted to pick it up anyway, test its balance, even though you know the weight of a sword better than you know yourself some days. But your shoulder twinges at the thought, so you decide against it. It's a dependable sort of weapon, capable of deflecting blows from sharp teeth and sharper claws.
+	*goto name_select
+	
+*if (weapon = "polearm")
+
+	The handle is snapped cleanly in two, and the blade at its end fares little better. You nudge it to the side, careful to avoid any splinters. A functional polearm is a clever weapon, capable of dealing damage while maintaining some semblance of a safe distance. Not in its current state, though.
+	*goto name_select
+
+*if (weapon = "firearm")
+
+	The barrel is crushed beyond repair. So much for keeping your distance. You like the illusion of safety it gives you, being able to snipe at your quarry while hidden behind cover. Sure, the Vanguard gets a little grumpy every time you send them a request for more enchanted ammunition, but hey, at least you don't get mauled half as often. In theory, anyway.
+	*goto name_select
+	
+*page_break [i]Your focus shifts.[/i]
+*label name_select
+
+Your eyes skim over the folder that sits on the table. Beneath the Vanguard emblem on the front cover lies your name.
+
+It reads…
+
+*fake_choice
+	#...Rowan.
+		*set name "Rowan"
+		Your name is $!{name}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+	#...Ash.
+		*set name "Ash"
+		Your name is $!{name}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+	#...Farah.
+		*set name "Farah"
+		Your name is $!{name}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+	#...Wren.
+		*set name "Wren"
+		Your name is $!{name}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+	#Actually, it's something else.
+		What is your first name?
+		*input_text name
+		Your name is $!{name}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+			
+*label surname_select
+
+And your last name?
+
+*fake_choice
+	#Grey.
+		*set lastname "Grey"
+		Your last name is $!{lastname}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+	#Lee.
+		*set lastname "Lee"
+		Your last name is $!{lastname}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+	#Hakim.
+		*set lastname "Hakim"
+		Your last name is $!{lastname}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+	#Zhang.
+		*set lastname "Zhang"
+		Your last name is $!{lastname}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+	#Actually, you don't have one.
+		*set lastname ""
+		People shrug off their last names for a variety of reasons. Do you?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I have one.
+				*goto name_select
+	#It's something else.
+		What is your last name?
+		*input_text lastname
+		Your last name is $!{lastname}, is this correct?
+		*fake_choice
+			#Yes, that is correct.
+			#No, I must have read that wrong.
+				*goto name_select
+
+You flip open the front page, intrigued. It's been a while since you've seen your own records, or paid it any real attention beyond a cursory glance. The last time you saw it was some years ago, when the examining doctor had left it behind on their table and wandered off to settle some other matters.
+
+It's mostly run-of-the-mill stuff anyway. The front page has all the basic details down, the bare necessities of identification boiled down to a single page.
+
+The text is slightly smudged, the ink trailing streaks over the page like someone had rushed a printing job. Right under your name, an underexposed portrait of yourself stares back at you, looking like they'd rather be anywhere else.
+
+*fake_choice
+	#There's something about the lighting there that really drains the life from a woman's eyes.
+		*set gender "female"
+		Have you always been a woman?
+		*fake_choice
+			#Yes. You were assigned female at birth, and feel comfortable with that identity.
+			#You were born intersex, but assigned male at birth. You decided it didn't fit.
+				*set pc_trans true
+				*set pc_intersex true
+			#You were born intersex, but assigned female at birth. You decided it fit pretty well. 
+				*set pc_intersex true
+			#Not at first. It's taken some time, but you've gotten your body closer to where you want to be.
+				*set pc_trans true
+
+	#There's something about the lighting there that really drains the life from a man's eyes.
+		*set gender "male"
+		Have you always been a man?
+		*fake_choice
+			#Yes. You were assigned male at birth, and feel comfortable with that identity.
+			#You were born intersex, but assigned female at birth. You decided it didn't fit.
+				*set pc_trans true
+				*set pc_intersex true
+			#You were born intersex, but assigned male at birth. You decided it fit pretty well.
+				*set pc_intersex true
+			#Not at first. It's taken some time, but you've gotten your body closer to where you want to be.
+				*set pc_trans true
+	
+	#There's something about the lighting there that really drains the life from a person's eyes.
+		*set gender "non-binary"
+		You never quite felt like the binary labels suited you well.
+		*fake_choice
+			#You were assigned female at birth, but it didn't quite sit right with you.
+			#You were born intersex, but assigned male at birth. You decided it didn't fit.
+				*set pc_intersex true
+			#You were born intersex, but assigned female at birth. You decided it didn't fit.
+				*set pc_intersex true	
+			#You were assigned male at birth, but it didn't quite sit right with you.
+
+And how do you feel about your body? Do you experience dysphoria?
+*fake_choice
+	#There are good days, and there are the bad days, but yes. 
+		*set pc_dysphoria true
+		Thankfully, your job requires you devote your full attention to not getting mauled by creatures most of the time, which helps you from spiralling down [i]that[/i] rabbit hole.
+	#It's a body. It works, which is good enough for you.
+		Frankly, you're surprised it's held up this well, considering what you put it through.
+	#No. You wouldn't say you're always [i]happy[/i] with it, but you're fine with it.
+		You've put as much work into your body as you can spare, and while it's not perfect, you're not exactly mad about it.
+		
+What pronouns do you prefer to use?
+*fake_choice
+	#She/her pronouns.
+		*set they "she"
+		*set them "her"
+		*set their "her"
+		*set theirs "hers"
+		*set plur false
+	#He/him pronouns.
+		*set they "he"
+		*set them "him"
+		*set their "his"
+		*set theirs "his"
+		*set plur false
+	#They/them pronouns.
+		*comment already set in startup.
+	#Custom pronouns.
+		*label custom_pronouns
+		Do not capitalise your input.
+		Alternative to they/she/he:
+		*input_text they
+		Alternative to them/her/him:
+		*input_text them
+		Alternative to their/her/his:
+		*input_text their
+		Alternative to theirs/hers/his:
+		*input_text theirs
+		Is this a plural pronoun, such as in the case of they/them pronouns?
+		*fake_choice
+			#Yes.
+				*set plur true
+			#No.
+				*set plur false
+		Let's just double check that. In the examples below, are the pronouns correct?
+
+		"Did you hear what ${they} said?"
+		*line_break
+		"Could you give that to ${them}, please?"
+		*line_break
+		"That's ${their} desk, you can't just go rummaging around like that."
+		*line_break
+		"I'll pay for ${theirs} too, don't worry about it."
+		*fake_choice
+			#Yes. Let's continue from here.
+				*goto appearance_select
+			#No, some things need to be changed.
+				*goto custom_pronouns
+
+*label appearance_select
+
+You remember the headquarters, with their fluorescent-lit corridors and blinding medical lights. From what you recall, the front parts of the building seemed friendly enough to curious guests, or clients ready to hire an intrepid agent for a job. It was the staff-only areas that never seemed to have been refurbished.
+
+Maybe they kept the atmosphere there unwelcoming for a reason. Watch the way you'd wear your discomfort. Weed out the weak.
+
+Or maybe it was just you, simply not being particularly photogenic in that instant. You're not sure how the files of other agents look. It's not like you can crawl around the database without being tracked, and this information is hardly available over any generic search engine.
+
+*if (gender = "female")
+	You tilt your head, comparing the woman in the picture to the one you can see in the mirror, staring dull-eyed back at you. A muscle across your torso spikes with pain at the movement, and you gingerly lift up the hem of the shirt to check.
+	*goto scars_check
+	
+*if (gender = "male")
+	You tilt your head, comparing the man in the picture to the one you can see in the mirror, staring dull-eyed back at you. A muscle across your torso spikes with pain at the movement, and you gingerly lift up the hem of the shirt to check.
+	*goto scars_check
+	
+*if (gender = "non-binary")
+	You tilt your head, comparing the person in the picture to the one you can see in the mirror, staring dull-eyed back at you. A muscle across your torso spikes with pain at the movement, and you gingerly lift up the hem of the shirt to check.
+	*goto scars_check
+
+*label scars_check
+*fake_choice
+	*selectable_if (pc_trans) #You can see the scars from here, neat incisions across your chest. It'd taken forever to hunt down a surgeon to do it, but you're glad you did.
+		*set pc_topscars true
+		Surprisingly, the Vanguard had offered to fully fund the surgery as well, and were generous with recovery time. You won't look gift horses in the mouth, here — that's when they start biting.
+		
+	#You can see the scars, mementos from your various missions, in varying states of fading. Some are fresher than others.
+		Your career makes its mark on your skin. It'd claim more if it could, and it [i]has[/i] for others, but your curious resilience to the Rot has always worked in your favour. 
+		
+		*if (gender = "male") and (pc_trans)
+			You turn ever so slightly to eye your binder, sitting atop your pile of blood-stained clothes. It's not a good idea to wear it over potentially cracked ribs, so you leave it be for now.
+			
+			*if (pc_dysphoria)
+				Even if the thought leaves a funny taste in your mouth.
+				
+				*goto skin_select
+			
+*label skin_select
+You stare a little longer, trying to pinpoint the worst of the damage. It's difficult to miss. Poking out from underneath the bandages is a new scar, its edges raised and jagged. You almost twist to follow it, but you don't really want to undo any of the work that's been done. Healing magic is a fickle art these days, or so you've heard.
+
+The rest of your skin is a veritable tulip field of bruises, purple, red, and yellow in parts that aren't bandaged or, miraculously, still unharmed. The more you look, the easier it is to pick out the scrapes and minor lacerations litter your skin, which is…
+
+*fake_choice
+	#Pale.
+		*set skincolour "pale"
+	#Fair.
+		*set skincolour "fair"
+	#Beige.
+		*set skincolour "beige"
+	#Olive.
+		*set skincolour "olive"
+	#Tan.
+		*set skincolour "tan"
+	#Warm brown.
+		*set skincolour "warm brown"
+	#Bronze.
+		*set skincolour "bronze"
+	#Dark brown.
+		*set skincolour "dark brown"
+	#Ebony.
+		*set skincolour "ebony"
+		
+*if (c_elemental)
+	Some elemental chimaeras have a certain quality about their skin that marks their 'outsider' heritage, morphing their skin tones beyond the typical human-like spectrum.
+	*fake_choice
+		*selectable_if (subspecies = "c_water") #Your skin has a blue-green hue to it as well, as typical of chimaeras descended from water elementals.
+			*set skincolour (skincolour&", ")&"with a water-like blue-green hue."
+		*selectable_if (subspecies = "c_fire") #Your skin has a reddish hue to it as well, as typical of chimaeras descended from fire elementals.
+			*set skincolour (skincolour&", ")&"with a fire-like reddish hue."
+		*selectable_if (subspecies = "c_air") #Your skin has an ethereal, other-worldly quality about it as well, as typical of chimaeras descended from air elementals.
+			*set skincolour (skincolour&", ")&"with an ethereal, other-worldly shine.	"
+		*selectable_if (subspecies="c_earth") #Your skin has a metallic sheen to it as well, as typical of chimaeras descended from earth elementals.
+			*set skincolour (skincolour&", ")&"with a metallic sheen.	"
+		#Your skin doesn't have any additional elemental quality that you have noticed.
+			*set skincolour (skincolour&".")
+	*goto eye_select
+		
+*label eye_select
+
+You drop the hem of the shirt, absently rearranging it back into place. There's something else about your reflection that has caught your attention, so you abandon the personnel file, moving closer to the mirror instead.
+
+Something's different, isn't there? You peer into…
+*fake_choice
+	#Amber eyes.
+		*set eyecolour "amber"
+	#Black eyes.
+		*set eyecolour "black"
+	#Blue eyes.
+		*set eyecolour "blue"
+	#Brown eyes.
+		*set eyecolour "brown"
+	#Gold eyes.
+		*set eyecolour "gold"
+	#Green eyes.
+		*set eyecolour "green"
+	#Grey eyes.
+		*set eyecolour "grey"
+	#Hazel eyes.
+		*set eyecolour "hazel"
+	#Purple eyes.
+		*set eyecolour "purple"
+	#Actually, it's something else.
+		What colour are your eyes? Do not capitalise your answer.
+		*input_text eyecolour
+		
+*if (species="chimaera")
+	The inherently magical nature of some chimaeras translates to a faint glow in their eyes.
+	*fake_choice
+		*selectable_if (subspecies = "c_water") #Your eyes shine faintly. At the right angle, it almost turns white, like sunlight glancing off ocean waves.
+			*set eyecolour2 (eyecolour&" and ")&"faintly shiny"
+		*selectable_if (subspecies = "c_fire") #The fire in your eyes is a flickering sort of thing, changeable on the whim of the smallest emotion.
+			*set eyecolour2 (eyecolour&", ")&"with a flickering flame at its core."
+		*selectable_if (subspecies = "c_air") #The glowing outline of your iris is feathery and pale, toeing the line of being not-quite-there.
+			*set eyecolour2 (eyecolour&", ")&"with feathered edges."
+		*selectable_if (subspecies="c_earth") #In the right light, your eyes glitter faintly with particles of gemstone dust, iridescent and colourful.
+			*set eyecolour2 (eyecolour&", ")&"with flecks of gemdust.	"
+		*selectable_if (subspecies="c_demon") #A scarlet ring outlines your iris when you tap into your demonic heritage, but other than that, they look indistinguishable from human eyes.
+			*set eyecolour2 (eyecolour&", ")&"with a scarlet ring."
+		#Your eyes don't have any additional elemental quality that you have noticed.
+			*set eyecolour2 (eyecolour&".")
+	*goto after_eyes
+
+
+*if (species="merfolk")
+	Some merfolk have a bioluminescent glow to their eyes, reminiscent of their deep sea aquatic counterparts.
+	*fake_choice
+		#Your eyes glow faintly in the dark, like dim headlights cutting through a night sky.
+			*set eyecolour2 (eyecolour&" and ")&"bioluminescent."
+		#Your eyes don't have any additional qualities that you have noticed.
+			*set eyecolour2 (eyecolour&".")
+	*goto after_eyes
+
+*if (species="shifter")
+	Most shifters are indistinguishable from other humans, but some shifters retain animal-like qualities even in their human forms.
+	*fake_choice
+		*selectable_if (subspecies = "sh_feline") #Your pupils are slitted and cat-like, thin like a razor's edge in low light.
+			*set eyecolour2 (eyecolour&" and ")&"slitted."
+		*selectable_if (subspecies = "sh_ungulate") #Your pupils are horizontal and elongated instead of round, adapted to scan the horizon for predators. 
+			*set eyecolour2 (eyecolour&", ")&"with horizontal pupils."
+		#Your eyes don't have any additional qualities that you have noticed.
+			*set eyecolour2 (eyecolour&".")
+	*goto after_eyes
+
+*label after_eyes
+
+But that's not all, is it? There are faint flecks of super-saturated gold amid the regular ${eyecolour} of your irises, which you're pretty sure weren't there before. 
+
+You rub your eyes, hard enough to make black spots dance in your vision, just to see if they'll go away. They don't. 
+
+Hm. Magic, then.
+
+Or more accurately, the aftermath of its use, residual magic rubbed off onto you after the healer stitched you back together. It'll fade in a day or so, and you know this from experience — any creature whose mind that you touch with your magic goes through the same thing, the ${eyecolour} of your eyes bleeding through theirs. A little fragment of a puzzle piece, part of the trail of breadcrumbs tying them to you. Anchoring.
+
+There's a part of you that squirms uneasily at the concept. What happens if you use too much? An anchor can turn to deadweight, if you're not careful. You don't want to drag them down.
+
+Still, you suppose it's better than what the Rot does, leeching colour from its victims. "At least it's like a gift," you remember one of your old teammates saying. "I don't know what to do with it, and it's going to disappear in a day or two regardless, but it's not like you're [i]taking[/i] anything from me, you know?"
+
+You wonder what happened to them, sometimes. Agents and teams get shuffled around so often to reduce constant exposure, it's a little difficult to keep track of the faces you've met over these years.
+
+*page_break [i]No point brooding about that now.[/i]
+
+You draw back from the mirror slightly, giving your face one last look before your critical gaze turns to your hair. The mystery of odd colours in your eyes might have been solved, but the mess of your hair is an entirely different matter.
+
+Who are you kidding? There's no mystery there. Being a hunter isn't exactly a job that lends itself towards glamour. Your hair is starting to look somewhat like the day-old leftovers that a stray dog scavenged out of the trash, and there's still blood matted in it, from what you can see.
+
+You grimace, running a hand through your…
+
+*fake_choice
+	#...platinum blond hair.
+		*set haircolour "platinum blond"
+	#...light blond hair.
+		*set haircolour "light blond"
+	#…grey hair.
+		*set haircolour "grey"
+	#...dark blond hair.
+		*set haircolour "dark blond"
+	#...auburn hair.
+		*set haircolour "auburn"
+	#...light brown hair.
+		*set haircolour "light brown"
+	#...dark brown hair.
+		*set haircolour "dark brown"
+	#...black hair.
+		*set haircolour "black"
+	*if (species="chimaera") 
+		#Actually, it's a little different. As an elemental chimaera, your hair reflects the element you are aligned with.
+			*set c_hair true
+			*goto chimaera_hairselect
+	#Actually, it grows out a different colour.
+		What colour is your natural hair, then? Do not capitalise your answer.
+		*input_text haircolour
+	#Actually, you've dyed it a different colour.
+		What colour did you dye your hair, then? Do not capitalise your answer.
+		*input_text haircolour
+		*set hairdye true
+		
+Its texture is…
+*fake_choice
+	#...straight.
+		*set hairtexture "straight"
+	#...wavy
+		*set hairtexture "wavy"
+	#...curly
+		*set hairtexture "curly"
+	#...coiled.
+		*set hairtexture "coiled"
+		
+And you keep it…
+*fake_choice
+	#...very short, practically a buzz cut.
+		*set hairlength "very short"
+		*goto after_hairselect
+	#...in an undercut.
+		*set hairlength "undercut"
+		*goto after_hairselect
+	#...short. It keeps it out of the way.
+		*set hairlength "short"
+		*goto after_hairselect
+	#...medium, about chin-length. Just enough to tie back if needed.
+		*set hairlength "medium"
+		*goto after_hairselect
+	#...locked. It keeps your hair out of the way, but it's not always the easiest to maintain.
+		*set hairlength "locked"
+		You keep your hair locked and…
+		*fake_choice
+			#...short.
+				*set hairlength (hairlength&", ")&"short	"
+			#...medium.
+				*set hairlength (hairlength&", ")&"medium	"
+			#...long.
+				*set hairlength (hairlength&", ")&"long	"
+		*goto after_hairselect
+	#...long. You tend to keep it tied up.
+		*set hairlength "long"
+		*goto after_hairselect
+	#...long. You tend to leave it loose, though you keep a hair band on hand just in case.
+		*set hairlength "long"
+		*goto after_hairselect		
+		
+*label chimaera_hairselect
+It's not uncommon for the elements to manifest in this way. 
+*if (subspecies = "c_water")
+	*set haircolour "free-floating and water-like"
+	In your case, your hair is reminiscent of water itself, almost free-floating. It sways and waves as though caught underwater, and the sunlight streaming through it is truly a spectacular sight.
+	
+	*goto chimaera_hairlength
+*if (subspecies = "c_fire")
+	*set haircolour "swirling and fire-like"
+	In your case, your hair is reminiscent of fire itself, its ends swirling and rippling in response to your emotions. Thankfully, it's a harmless sort of flame, and you've taken to wearing a hood whenever you need to be stealthy.
+	
+	*goto chimaera_hairlength
+*if (subspecies = "c_air")
+	*set haircolour "wispy and smoke-like"
+	In your case, your hair is reminiscent of the air itself, wispy and curling like gentle plumes of smoke. It's difficult to tame at the best of times, but at least you never have to worry about volume.
+	
+	*goto chimaera_hairlength
+*if (subspecies = "c_earth")
+	*set haircolour "flowery and earth-like"
+	In your case, your hair is reminiscent of the earth itself, resembling leaves and flowers that arrange themselves gently against your scalp. They change with the seasons, which makes matching your wardrobe an interesting challenge.
+	
+	*goto after_hairselect
+
+*label chimaera_hairlength
+
+It's not quite something that can be cut to a certain length though, not by any mundane means, but you've figured it out enough to keep it…
+*fake_choice
+	#...short, just enough to keep it out of the way.
+		*set hairlength "short"
+	#...medium, hovering around chin-length, if it sat that way.
+		*set hairlength "medium"
+	#...long, though you've more or less figured out how to persuade it to stay out of your way.
+		*set hairlength "long"
+
+*label after_hairselect
+By any means, you're in desperate need of a shower. There's a perfectly good one back in the hotel that the Vanguard has booked for you, for the time that you're in town. Letting your hand fall back to your side, you take a step back from the mirror. And then another. 
+
+And another.
+
+The nausea has faded ever so slightly, your body begrudgingly resigned to having to be upright. If you're lucky, you get to keep interaction to a minimum, and you'll be able to retreat to your room and sleep the rest of the aches away until you're functional once more.
+
+Hopefully, anyway.
+
+*page_break [i]You reach for the door.[/i]
+
+*finish
+			
+	
+
+

@@ -1,0 +1,30 @@
+*comment  ==============================
+*comment 		personality stats stuff
+*comment  ==============================
+
+*comment call with
+*comment *gosub_scene routines p_statscheck
+
+*label p_statscheck
+*if ((reserved > open)  and (reserved > humorous))
+	*set pritrait "reserved"
+*if ((open > reserved) and (open > humorous))
+	*set pritrait "direct"
+*if ((humorous > reserved) and (humorous > open))
+	*set pritrait "humorous"
+*return
+
+*comment *gosub_scene routines pr_statscheck
+
+*label pr_statscheck
+*if ((strength > dexterity)  and (strength > endurance)) and (strength > magic)
+	*set comtrait "strength"
+*if ((dexterity > strength)  and (dexterity > endurance)) and (dexterity > magic)
+	*set comtrait "dexterity"
+*if ((endurance > dexterity)  and (endurance > strength)) and (endurance > magic)
+	*set comtrait "endurance"
+*if ((magic > dexterity)  and (magic > strength)) and (magic > endurance)
+	*set comtrait "magic"
+*return
+
+*finish

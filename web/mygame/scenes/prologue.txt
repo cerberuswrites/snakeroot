@@ -1,0 +1,159 @@
+*comment  ==============================
+*comment 		prologue
+*comment  ==============================
+
+*if (cw_toggle)
+	[b]Content Warning:[/b]
+	
+	This chapter includes injury to player character, physical description of a monster, mild body horror.
+	
+	*page_break
+	*goto prologue
+
+*label prologue
+
+*set health "injured"
+*set resilience 75
+*set resilience_status "What happened?"
+
+Your breath rattles between your ribs, sending sparks of white-hot agony arcing through your body. Beneath you, the rough stone is uncomfortably warm, grating against your skin.
+
+You can taste ash and iron on your tongue. Your mind feels like it has been swathed in cotton, your vision cloudy.  
+
+There is only one coherent thought that comes to you: you need to get up.
+
+[i]Get up.[/i]
+
+You need to [i]move.[/i]
+
+Come on, [i]think.[/i] What are you doing here, lying face down on a cave floor? Your mouth tastes like the wrong end of a gun, and there's a fierce headache threatening to split your skull. The skin across your shoulders feels odd, stretched tight in the way a bad sprain does. You're sure it would make for a colourful bruise, if only you had the strength to check.
+
+The world is blurry and hazy around you, and your limbs feel heavy, like waking from a bad dream. The pain is sharp enough to ground you, though, every inch of movement a stab and twist in your gut. Something must be broken, you note absently, the rising panic quelled by the fact that your mind is lingering two steps behind, slow to catch up to the present.
+
+*page_break [i]The smell of iron hangs heavy in the air.[/i]
+
+Ah. It's your blood. That's what it is.
+
+Your blood, pooling out onto the ground, staining your clothes crimson. You can hear yourself now, breathing ragged, the sound too loud within the enclosed space of the cave. 
+
+But it's not just yours, is it? You're remembering now, clawing through the disorientating aftermath of being thrown against the wall like a ragdoll. Part of it belongs to your quarry too.
+
+It would explain the ash on your tongue, the smoke streaked across your brow, the acrid stench of something burning. It's [i]you[/i], your mind helpfully supplies, the fabric of your clothes singed at the edges.
+
+The ground grows warmer under you.
+
+It's getting closer.
+
+*fake_choice
+	#You reach for your magic, the power flickering weakly within you. It hasn't gone out. Not yet.
+		*set magic +10
+		With yourself still groggy and gazed, it feels like wading through deep water. Your magic doesn't focus on [i]why[/i] it is being used, it simply responds to your call with a surge that threatens to spiral out of control. 
+		
+		Your mind brushes against something unfamiliar. Something cold. Something monstrous. [i]There.[/i]
+		
+		You press against it hard enough to feel it flinch. It'll buy you nothing more than a split-second of spare time, but that will have to do.
+		
+	#You are strong enough, you know this. You drag yourself up on your forearms, teeth bared in a snarl.
+		*set strength +10
+		Your arms are shrieking with the effort as you force your body to cooperate. It complains every inch of the way, but it complies. Not soon enough, in your opinion. The heat has become a palpable thing, thick and sweltering in the air.
+		
+	#You are fast, much faster than the beast that approaches. You can dodge this, you know you can.
+		*set dexterity +10
+		You set your jaw stubbornly and spring forward from the ground in an explosive motion. You have precious few moments before your body catches up to what you made it do and starts complaining, but you don't have time to wait for your vision to stop swimming.
+		
+	#You have been through worse. You know the limits of your own body, and this isn't it.
+		*set endurance +10
+		Breathing may hurt, but you [i]are[/i] breathing. Your body is capable of movement. That will have to suffice. You have always been familiar with pain — you need to push through it, and you'll just have to stitch together the broken pieces later, in your own time.
+
+*gosub_scene routines pr_statscheck
+But now, you need to move.
+
+[i]You need to move—[/i]
+
+[b][i]MOVE![/i][/b]
+
+Instinct takes over, senses honed from experience and training. It doesn't mean that moving doesn't [i]hurt[/i] — you have to bite down on a cry when you roll across the ground and hear a disconcerting [i]crack[/i].
+
+A gout of flame slams into the ground right where you were a second ago. The ground blisters immediately, the stones blackened, smoke curling off its surface. 
+
+You straighten up shakily to face your opponent, your mind finding a grim note of humour as you catch your breath. At least you know one thing for sure — something is [i]definitely[/i] broken.
+
+Don't get distracted now, though.
+
+It's here, claws scraping gouges into the ground as it lumbers forward, yellow eyes gleaming. 
+
+[i]Salamander.[/i] 
+
+You are a hunter, but for a brief moment, you cannot help but feel like the [i]hunted.[/i]
+
+*set health "potentially broken ribs? Various lacerations, minor burns"
+
+*page_break [i]It's not a pleasant feeling.[/i]
+
+*set resilience 60
+*set resilience_status "it's [i]rotting[/i] get away get away GET AWAY"
+*set resilience_statbar "draining"
+
+The salamander takes a breath, jaws agape, the embers of its throat glowing as it prepares to roast you alive.
+
+But the smell hits you first, above the burning sting that makes your eyes water.
+
+[i]Gaping maw, broken teeth, rotting, [b]festering[/b]—[/i]
+
+It is enough to force your mind back to the present, to shake off the vestiges of your daze. Your throat tightens, your thoughts finally catching up to you. This was supposed to be a simple mission. A rabid salamander, lurking on the outskirts of town. Nothing special. Nothing you haven't done before.
+
+No one told you it was [i]corrupted.[/i]
+
+You probably wouldn't have ventured out alone if you had known. But you had, like a fool, and now you have to pay the price.
+
+*page_break [i]No one's going to come for you.[/i]
+
+The next dodge is clumsier, the flames catching on the edge of your pants. You can feel the sting of fire against your skin; you're trying not to choke on the smoke that curls up from the salamander's jaws as it swings around to face you once more. The adrenaline is pumping through your system, but it won't be enough. There's no time to look for your fallen weapon — it's just you and this monster, its too-sharp teeth against your too-thin skin.
+
+They won't find you till days later, when your reports don't come in, or they notice that your phone signal hasn't moved in ages. They won't even find a body, just some charred husk of a person, assuming the salamander doesn't decide to have a snack before then.
+
+Though you suppose that's the ideal outcome, given the alternative of succumbing to the Rot. Now that the monster is closer, you can feel the evidence of its corruption: the heaviness of the air, an oil slick against your skin, smothering your senses. Bile rises in the back of your throat. Then there's the [i]lure[/i] of the Rot, like a slow, maddening lullaby, to lay down your arms. 
+
+To stop fighting.
+
+[i]Broken limbs twisted into movement. Bone. Blood. Ash. A facsimile of life, festering within the shape of a body, jaws unhinged like a snake, skin tearing— [b]Mortal frames were not meant to house such power—[/b][/i]
+
+The salamander snarls, the frills of its neck flaring, and— Wait.
+
+There, behind its jaw. A still-fresh wound, black blood running sluggishly down its side. You didn't do that. But the edges are sharp, clean, the wound deep enough that it could only have been caused by a hunter's blade.
+
+[i]Another[/i] hunter.
+
+*page_break [i]You aren't alone.[/i]
+
+You only have a split second to act. You don't know where they are, whether they're still alive, whether they're still capable of fighting. But you can try. You have to try. Your body is shrieking at you to [i]fight— [/i]
+
+The salamander lunges, mouth agape.
+
+You have to be careful with this. You can't use more than what your body can offer, lest your magic decides to consume you whole.
+
+All magic has a price, and what is not offered, is taken.
+
+But for now, you think, you have [i]just[/i] enough for this.
+
+Just enough to survive.	
+
+You reach out with your mind, and you…
+
+*fake_choice
+	
+	#...pull.
+		*set s_mal true
+		It floods into your lungs, ice shards with their pinpricks of pain. Freezing. [i]Burning.[/i] 
+		
+		You are being torn apart from the inside out.
+		
+	#...push.
+		*set s_lux true
+		Static dances across your skin, a storm raging across the contours of your shape. 
+		
+		The tempest is clawing at you, tearing you apart in its frenzy.
+		
+Then, the world goes dark.
+
+*finish

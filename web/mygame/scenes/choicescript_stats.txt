@@ -1,0 +1,330 @@
+*temp stat_page 0
+
+*comment  ============================================================
+*comment
+*comment 										main stat page
+*label main_stat_page
+*comment  ============================================================
+
+*comment  ==============================
+*comment 		personal
+*comment  ==============================
+
+*image personal.png center personal
+
+
+*if (lastname=" ")
+	[b]Name:[/b] Unknown.
+	*goto stats_eyes
+*elseif (lastname="")
+	[b]Name:[/b] $!{name}.
+	*goto stats_eyes
+*else
+	[b]Name:[/b] $!{name} $!{lastname}.
+	*goto stats_eyes
+
+*label stats_eyes
+*line_break
+[b]Eyes:[/b] @{(species != "human") $!{eyecolour2} | $!{eyecolour}.}
+*line_break
+*if (hairdye)
+	[b]Hair:[/b] Dyed ${haircolour}, ${hairlength} and ${hairtexture}.
+	*goto stats_skin
+*if (c_hair)
+	[b]Hair:[/b] $!{haircolour}, ${hairlength} in length.
+	*goto stats_skin
+*else
+	[b]Hair:[/b] $!{haircolour}, ${hairlength} and ${hairtexture}.
+	*goto stats_skin
+
+
+*label stats_skin
+*line_break
+[b]Skin:[/b] @{(c_elemental) $!{skincolour} | $!{skincolour}.}
+*line_break
+[b]Species:[/b] $!{species}.
+*comment ========= human ========
+*if (species = "human")
+	
+	*goto stats_description
+	*comment =======================
+*else
+	*comment ====== chimaera ========
+	*if (subspecies = "c_water")
+		Primarily of water elemental heritage, capable of minor water manipulation.
+
+		*goto stats_description
+	*if (subspecies = "c_fire")
+		Primarily of fire elemental heritage, capable of minor fire manipulation.
+
+		*goto stats_description
+	*if (subspecies = "c_air")
+		Primarily of air elemental heritage, capable of minor air manipulation.
+
+		*goto stats_description
+	*if (subspecies = "c_earth")
+		Primarily of earth elemental heritage, capable of minor earth manipulation.
+
+		*goto stats_description
+	*if (subspecies = "c_demon")
+		Primarily of demonic heritage, unclassified type. Capable of minor shapeshifting to manifest natural weaponry.
+		
+		*goto stats_description
+	*comment =======================
+	*comment ======== merfolk ========
+	*if (subspecies = "mer_cephalopod")
+		Cephalopod subspecies, capable of shapeshifting into octopus-like aquatic form when in water.
+		*if (mer_siren)
+			Known siren, also capable of minor hypnosis.
+
+			*goto stats_description
+		*else
+			
+			*goto stats_description
+	*if (subspecies = "mer_ray")
+		Ray subspecies, capable of shapeshifting into ray-like aquatic form when in water.
+		*if (mer_siren)
+			Known siren, also capable of minor hypnosis.
+
+			*goto stats_description
+		*else
+			
+			*goto stats_description
+	*if (subspecies = "mer_shark")
+		Shark subspecies, capable of shapeshifting into shark-like aquatic form when in water.
+		*if (mer_siren)
+			Known siren, also capable of minor hypnosis.
+
+			*goto stats_description
+		*else
+			
+			*goto stats_description
+	*if (subspecies = "mer_eel")
+		Eel subspecies, capable of shapeshifting into eel-like aquatic form when in water.
+		*if (mer_siren)
+			Known siren, also capable of minor hypnosis.
+
+			*goto stats_description
+		*else
+			
+			*goto stats_description
+	*if (subspecies = "mer_fish")
+		General fish subspecies, capable of shapeshifting into fish-like aquatic form when in water.
+		*if (mer_siren)
+			Known siren, also capable of minor hypnosis.
+
+			*goto stats_description
+		*else
+			
+			*goto stats_description
+	*comment =======================
+	*comment ======== shifters =========
+	*if (subspecies = "sh_canine")
+		Canine subspecies, possesses enhanced senses and capable of shifting into animalistic canine form at will.
+
+		*goto stats_description
+	*if (subspecies = "sh_feline")
+		Feline subspecies, possesses enhanced senses and capable of shifting into animalistic feline form at will.
+
+		*goto stats_description
+	*if (subspecies = "sh_ungulate")
+		Ungulate subspecies, possesses enhanced senses and capable of shifting into animalistic ungulate form at will.
+
+		*goto stats_description
+	*if (subspecies = "sh_mustelid")
+		Mustelid subspecies, possesses enhanced senses and capable of shifting into animalistic canine form at will.
+
+		*goto stats_description
+	*comment =======================
+
+*label stats_description
+*if (lastname="")
+	Agent $!{name} is ${height} in height and typically dresses in a ${clothes} style. $!{they} @{plur are|is} armed with a ${weapon}. Approach with caution.
+	*goto stats_personality
+*else
+	Agent $!{lastname} is ${height} in height and typically dresses in a ${clothes} style. $!{they} @{plur are|is} armed with a ${weapon}. Approach with caution.
+	*goto stats_personality
+
+*label stats_personality
+
+$!{they} primarily @{plur display|displays} a ${pritrait} disposition,
+*if (impulsive >= 50)
+	and has been known to demonstrate some impulsive behaviour on the field.
+	*goto stats_nextup_taverse
+*if (impulsive > 74)
+	and has been known to demonstrate reckless behaviour on the field.
+	*goto stats_nextup_taverse
+*if (impulsive < 50)
+	and has been known to be fairly careful on the field.
+	*goto stats_nextup_taverse
+*if (impulsive < 26)
+	and has been known to be extremely cautious on the field.
+	*goto stats_nextup_taverse
+
+*label stats_nextup_taverse
+*if (touchaverse)
+	Do not touch without warning.
+	*goto stats_nextup_professional
+*else
+	*goto stats_nextup_professional
+
+*label stats_nextup_professional
+*line_break
+
+
+*comment  ==============================
+*comment 		professional
+*comment  ==============================
+
+*image professional.png center professional
+
+Agent $!{lastname} demonstrates notable proficiency in ${comtrait}.
+
+*if (prof_stat_tog)
+	*stat_chart
+		percent strength Strength
+		percent dexterity Dexterity
+		percent endurance Endurance
+		percent magic Magic
+	*goto stats_designation
+	
+*label stats_designation
+[b]Designation:[/b] Hunter.
+*line_break
+[b]Status:[/b] $!{status}. $!{health}.
+*line_break
+[b]Ability:[/b] [i]$!{ability}.[/i] Displays a variant of telepathic magic and remarkable resilience in areas of high Rot concentration. Further examination required.
+
+*image divider.png center
+
+[b]Resilience:[/b] $!{resilience_status}
+*stat_chart
+	percent resilience $!{resilience_statbar}
+
+*goto navigation_menu
+
+*comment  ============================================================
+*comment
+*comment 						relationships
+*label relationship_stat_page
+*comment  ============================================================
+
+
+*image relationships.png center relationships
+
+*if (m_met = false)
+	[b]Mallory Hart.[/b]
+	*line_break
+	[i]You have not met this person yet.[/i]
+
+	*goto raine_stats
+*else
+	*image mal-id.png center mallory
+	[b]Mallory:[/b] $!{m_desc}
+	*stat_chart 
+		percent m_rs $!{m_status}
+	*goto raine_stats
+
+*label raine_stats
+*if (r_met = false)
+	[b]Raine Hart.[/b]
+	*line_break
+	[i]You have not met this person yet.[/i]
+
+	*goto lux_stats
+*else
+	*image raine-id.png center raine
+	[b]Raine:[/b] $!{r_desc}
+	*stat_chart 
+		percent r_rs $!{r_status}
+	*goto lux_stats
+
+*label lux_stats
+*if (l_met = false)
+	[b]Lux.[/b]
+	*line_break
+	[i]You have not met this person yet.[/i]
+
+	*goto navigation_menu
+*else
+	*image raine-id.png center lux
+	[b]Lux:[/b] $!{l_desc}
+	*stat_chart 
+		percent l_rs $!{l_status}
+	*goto navigation_menu
+
+*comment  ============================================================
+*comment
+*comment 				glossary of game terms
+*label glossary_stat_page
+*comment  ============================================================
+
+*image glossary.png center glossary
+
+[b]Monsters.[/b] The creatures outside the walls. There's the run-of-the-mill kinds, of course, but these are different. Rotting. Festering. Different people call them different things — some call them outside, some call them aberrations, some call them a price to pay for some ancient sin. What sin, you don't know, but you do know this: these creatures were made, not born.
+
+[b]The Rot.[/b] The phenomenon that started 20 years ago, resulting in drastic changes in the use of magic and the rise of strange beasts. The monsters that arise from this seem to be capable of spreading its corruption — it seeps into the land around them, and into people, if not careful.
+
+[b]Magic.[/b] One of the major sources of power in this world, integrated and co-existing alongside modern technology. Present in all, easy to use, and difficult to master. All magic has a price, and what is not offered, is taken. The Rot changed the way that magic operated — individuals without magic prior to its onset began to develop unknown abilities, while existing magical structures struggled to maintain integrity.
+
+[b]The Vanguard.[/b] The company that you work for. They specialise in most, if not all, things monster-related: locating, researching, and exterminating. Of course, they're best known for the last of those.
+
+[b]Field Agents.[/b] The main operatives of the Vanguard, who take on any job that the Vanguard leaders send their way. Some people prefer to take on specialties within this job, yourself included, hence your title: hunter.
+
+[b]Chimaeras.[/b] A humanoid creature with a set of horns and a tail. They are descended from 'outsiders' such as elementals and demons, and as a result, are typically known to have an affinity for with elemental magic.
+
+[b]Merfolk.[/b] A predominantly aquatic species, capable of existing on land through a particularly painful shapeshifting experience. Most tend to stick to one habitat or another for this reason. Merfolk that possess an ability to hypnotise with their voice are known as Sirens.
+
+[b]Shifters.[/b] A shapeshifting humanoid capable of assuming an animalistic form at will. Known for their curious markings that often resemble their alternate form, most shifters display related traits even when in their humanoid form. Canine shifters, for instance, possess a heightened sense of smell even when not shapeshifted.
+
+[b]Humans.[/b] The most populous species still. They're adaptable and resilient, and can be found in almost every settlement that still stands.
+
+[b]Sorcerers.[/b] A class of humanoid that is capable of performing powerful acts of magic. True sorcerers are rare, especially in the aftermath of the Rot.
+
+[b]Salamanders.[/b] A magical beast that resembles a dragon without wings. Adult salamanders are capable of breathing fire, and range anywhere between four to five metres in length.
+
+
+*goto navigation_menu
+
+*comment  ============================================================
+*comment
+*comment 					toggle settings
+*label toggle_settings
+*comment  ============================================================
+
+*if (cw_toggle)
+		Content warnings are currently enabled at the start of each chapter.
+		*goto set_toggle_settings
+	
+*label set_toggle_settings
+*choice
+	#Enable content warnings at the start of each chapter.
+		*set cw_toggle true
+		*finish
+	#Disable content warnings at the start of each chapter.
+		*set cw_toggle false
+		*finish
+
+
+
+*comment  ============================================================
+*comment
+*comment 					stats menu navigation
+*label navigation_menu
+*comment  ============================================================
+
+*choice
+	*if (stat_page != 0) #Statistics.
+		*set stat_page 0
+		*goto main_stat_page
+	*if (stat_page != 1) #Relationships.
+		*set stat_page 1
+		*goto relationship_stat_page
+	*if (stat_page != 2) #Glossary.
+		*set stat_page 2
+		*goto glossary_stat_page
+	*if (stat_page != 3) #Toggles.
+		*set stat_page 3
+		*goto toggle_settings
+	#Return to the game.
+		*finish     

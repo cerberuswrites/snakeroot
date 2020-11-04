@@ -1,0 +1,70 @@
+*label preset_mc
+
+*comment  ==============================
+*comment 		preset mc for testing
+*comment		starts at chapter 1 p1
+*comment  ==============================
+
+*comment  ==============================
+*comment		prologue stats
+*comment  ==============================
+
+*set dexterity +10
+*set s_mal true
+
+*comment  ==============================
+*comment		cc stats
+*comment  ==============================
+
+*set health "injured..? Healing"
+*set resilience 95
+*set resilience_status "Recovering."
+*set resilience_statbar "Unaffected"
+
+*set species "shifter"
+*set strength  %+5
+*set dexterity  %+5
+
+*set dexterity  %+10
+*set subspecies "sh_feline"
+
+*set height "tall"
+*set clothes "colourful"
+*set weapon "polearm"
+
+*set name "Julian"
+*set lastname "Graves"
+
+*set gender "male"
+*set pc_trans true
+*set pc_dysphoria true
+*set pc_topscars true
+
+*set they "he"
+*set them "him"
+*set their "his"
+*set theirs "his"
+*set plur false
+
+*set skincolour "tan"
+*set eyecolour "yellow"
+*set eyecolour2 (eyecolour&" and ")&"slitted."
+*set haircolour "light brown"
+*set hairtexture "wavy"
+*set hairlength "short"
+
+*gosub_scene routines pr_statscheck
+
+You are $!{name} $!{lastname}, a ${species} who uses a ${weapon}.
+
+Your pronouns are ${they} / ${them}.
+
+Proceed?
+
+*choice
+	#Yes.
+		*goto_scene ch1_1
+	#Return to start.
+		*goto_scene cw
+	
+*finish
